@@ -13,7 +13,15 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
 Here are steps that A did once and for all at the start:
 
-1. Created github repository on github website.
+1. Created github repository on github website. Then did this:
+
+cd wfbase
+git init
+git add --all
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:sinisacoh/wfbase.git
+git push -u origin main
 
 2. Created develop branch and pushed it to github:
 
