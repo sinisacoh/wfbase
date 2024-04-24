@@ -43,7 +43,11 @@ git push -u origin main
 
 Note that "origin" in git language means github repository.
 
-4. Also made main and develop branch protected.
+4. Also made main and develop branch protected.  In settings
+under "branches" select "Require a pull request before merging"
+and keep selected "Require approvals".
+
+5. In the settings change the default branch to "develop".
 
 *************************
 
