@@ -54,7 +54,7 @@ and keep selected "Require approvals".
 1. If B wants to add a feature to wfbase they should first get
 the repository:
 
-  git clone http://github.com/sinisacoh/wfbase
+  git clone git@github.com:sinisacoh/wfbase.git
 
 or, if it already in place, download updates
 
@@ -129,6 +129,7 @@ pull request on the website.
 
 7. The feature_DESCRIPTOR branch can now be deleted:
 
+  git checkout develop
   git branch -d feature_DESCRIPTOR                  ! locally
   git push origin --delete feature_DESCRIPTOR       ! remotely
 
