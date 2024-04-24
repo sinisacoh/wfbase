@@ -49,9 +49,11 @@ def test_not_allowed_names(comp_test, threshold):
 
     with pytest.raises(ValueError) as exc_info:
         x.new("ABCDEF", "1.0 * eV")
-    error_testing(exc_info, "Quantity \"ABCDEF\" does not exists already, but a similarly named quantity (ignoring the tilde symbol, ~) does exist! This is not allowed as these are too similar. Pick a more unique name.")
-
+    error_testing(exc_info, "Quantity \"ABCDEF\" does not already exists, but a similarly named quantity (ignoring the tilde symbol, ~) does exist! This is not allowed as these are too similar. Pick a more unique name.")
+    
     with pytest.raises(ValueError) as exc_info:
         x.new("A~BCDEF", "1.0 * eV")
-    error_testing(exc_info, "Quantity \"A~BCDEF\" does not exists already, but a similarly named quantity (ignoring the tilde symbol, ~) does exist! This is not allowed as these are too similar. Pick a more unique name.")
+    error_testing(exc_info, "Quantity \"A~BCDEF\" does not already exists, but a similarly named quantity (ignoring the tilde symbol, ~) does exist! This is not allowed as these are too similar. Pick a more unique name.")
 
+
+    
