@@ -1,0 +1,27 @@
+================
+How to test code 
+================
+
+Install pytest with
+
+pip install pytest
+pip install pytest-cov
+
+# test all
+pytest
+
+# test all in one file
+pytest test_multiple_line_expresssions.py
+
+# show output
+pytest -s
+
+# test only one function
+pytest -v test_multiple_line_expresssions.py::test_change_indices_in_einsum3
+
+# to get code coverage use (need to have pytest-cov installed)
+pytest --cov
+
+# ... more detail
+pytest --cov --cov-report html --cov=myproject .
+

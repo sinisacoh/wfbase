@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rm -rf build
+rm -rf source/all_examples/
+rm -rf source/misc
+rm source/sg_execution_times.rst
+
+rm -rf ../examples/run_dft
+
+rm source/examples.rst
+rm source/__examples.rst
+
+rm source/index.rst
+rm source/__index.rst
+
+make clean

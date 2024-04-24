@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp ../website/__downloaded_database_not_in_github/au_fcc.wf .

@@ -1,0 +1,7 @@
+mkdir _work
+wget https://coh.ucr.edu/wfbase/2024_03_22/psp/Fe.upf
+mpirun -np 16 pw.x -npool 16 -in x.scf.in  >& x.scf.out
+mpirun -np 16 pw.x -npool 16 -in x.nscf.in >& x.nscf.out
+mpirun -np 1  wannier90.x -pp x
+mpirun -np 16 pw2wannier90.x -npool 1 < x.pw2wan >& pw2wan.out
+mpirun -np 1  wannier90.x x

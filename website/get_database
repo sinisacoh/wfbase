@@ -1,0 +1,10 @@
+#!/bin/bash
+
+wget coh.ucr.edu/wfbase/latest/data.zip
+
+unzip data.zip
+
+rm data.zip
+
+mv data __downloaded_database_not_in_github
+

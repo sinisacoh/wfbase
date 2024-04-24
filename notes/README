@@ -1,0 +1,9 @@
+wfbase.py = wfbase package source
+
+examples/ = folder with examples
+
+notes/ = information about how to deal with git
+
+tests/ = tests of WfBase package
+
+website/ = source of website for WfBase written in Sphinx.

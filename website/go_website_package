@@ -1,0 +1,66 @@
+#!/bin/bash
+
+PYTHON_FOR_BIN=python
+
+mkdir source/misc
+
+# construct source tarball and put it in misc folder
+rm -rf ../dist
+rm ../MANIFEST.in
+(cd .. ; $PYTHON_FOR_BIN setup.py sdist --format=gztar)
+(cd .. ; $PYTHON_FOR_BIN setup.py sdist --format=zip)
+cp ../dist/*.tar.gz source/misc
+cp ../dist/*.zip source/misc
+rm -rf ../dist
+
+(cd ../examples; tar -zcvf run_dft_output.tar.gz run_dft_output ; mv run_dft_output.tar.gz ../website/source/misc)
+
+(cd source/ ;                           rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+(cd source/misc/ ;                      rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+(cd source/all_examples/ ;              rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+(cd source/all_examples/images/ ;       rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+(cd source/all_examples/images/thumb/ ; rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+
+# copy all releases of the code
+cp local/release/ver_*/*.tar.gz source/misc
+
+# get database files at the right place
+(cd ../examples ; rm data ; ln -s ../website/__downloaded_database_not_in_github data)
+
+rm -rf ../examples/run_dft
+
+# clean up files that will later be made out of template
+rm source/__examples.rst
+rm source/__index.rst
+
+# now create website using sphinx
+touch source/index.rst
+touch source/examples.rst
+make html >& /dev/null
+rm source/index.rst
+rm source/examples.rst
+
+# now need to create single unified examples page, as sphinx-galllery doesn't allow that directly
+python create_single_examples_page.py source/examples_template.rst > source/__examples.rst
+(cd source ; ln -s __examples.rst examples.rst)
+python create_index_page.py source/index_template.rst > source/__index.rst
+(cd source ; ln -s __index.rst index.rst)
+
+# create page with all information in the computator
+python create_output_page.py source/quantities_template.rst > source/__quantities.rst
+(cd source ; ln -s __quantities.rst quantities.rst)
+# create page with all information in the database
+python create_output_page.py source/database_template.rst > source/__database.rst
+(cd source ; ln -s __database.rst database.rst)
+
+# now make everything together
+make html SPHINXOPTS="-n"
+
+# get rid of non-template rst files
+(cd source ; rm __examples.rst examples.rst __index.rst index.rst __quantities.rst quantities.rst __database.rst database.rst)
+
+# fix up the funny characters
+sed -i '' 's/–/\&ndash;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/“/\&ldquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/”/\&rdquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/’/\&rsquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html

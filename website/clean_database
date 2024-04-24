@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf __downloaded_database_not_in_github
+

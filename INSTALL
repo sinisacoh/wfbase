@@ -1,0 +1,8 @@
+To install the latest version of WfBase simply type in terminal:
+
+  pip install wfbase --upgrade
+
+If you don't have root access try installing WfBase into your home 
+folder by executing:
+
+  pip install wfbase --upgrade --user
