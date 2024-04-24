@@ -21,16 +21,29 @@ git add --all
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:sinisacoh/wfbase.git
+
+2. Add ssh key:
+
+Go to settings on github.
+Click on "Deploy keys" on the left side.
+Click "Add deploy key" in top right corner.
+Copy paste contents of .ssh/id_rsa.pub into "Key"
+Give some name.
+Select "Allow write access".
+Add.
+
+Now you can run the following command:
+
 git push -u origin main
 
-2. Created develop branch and pushed it to github:
+3. Created develop branch and pushed it to github:
 
   git branch develop
   git push -u origin develop
 
 Note that "origin" in git language means github repository.
 
-3. Also made main and develop branch protected.
+4. Also made main and develop branch protected.
 
 *************************
 
