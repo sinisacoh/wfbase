@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+# https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
+
+from setuptools import setup
+import pathlib
+
+here = pathlib.Path(__file__).parent.resolve()
+long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(name = 'wfbase',
       version = '0.0.2',
@@ -12,10 +18,12 @@ setup(name = 'wfbase',
       py_modules = ['wfbase'],
       license = "gpl-3.0",
       description = "Easy way to compute from first-principles various properties depending on the electronic structure of periodic solids.",
-      long_description = "Easy way to compute from first-principles various properties depending on the electronic structure of periodic solids.  Can parse user-provided mathematical expressions, in a human-readable format.  Includes a database of some simple materials.",
+      long_description = long_description,
+      long_description_content_type = "text/markdown",
       platforms = ['UNIX', 'MAC OS X', 'Windows'],
       install_requires = [\
           "wannierberri", "pyfftw", "spglib", "irrep", "untangle",\
           "imgcat", "numpy", "numba", "pyparsing", "matplotlib", "opt_einsum", "textwrap", "pillow"
       ],
+      python_requires = ">=3.7",
       )

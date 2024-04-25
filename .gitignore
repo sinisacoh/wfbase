@@ -1,2 +1,15 @@
 .DS_Store
 tests/.coverage
+.tox
+__pycache__
+examples/data
+examples/*.pdf
+examples/*.png
+examples/run_dft
+tests/__pycache__
+website/__downloaded_database_not_in_github
+website/build
+website/source/all_examples
+website/source/misc
+website/source/sg_execution_times.rst
+wfbase.egg-info
