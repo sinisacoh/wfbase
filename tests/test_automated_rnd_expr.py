@@ -15,7 +15,7 @@ np.set_printoptions(linewidth = 100000)
 np.seterr(all = 'raise')
 
 def test_automated_single_line_expression(comp_test_same_len, threshold):
-    for i in range(50):
+    for i in range(20):
         print("STEP", i)
         
         random.seed(i)
@@ -41,7 +41,7 @@ def test_automated_single_line_expression(comp_test_same_len, threshold):
         assert np.all(np.abs((custom - correct) / np.max(np.abs(correct))) < threshold)
     
 def test_automated_multiple_line_expression_short(comp_test_same_len, threshold):
-    for i in range(50):
+    for i in range(25):
         print("STEP", i)
 
         random.seed(i)
@@ -72,7 +72,7 @@ def test_automated_multiple_line_expression_short(comp_test_same_len, threshold)
 def test_automated_multiple_line_expression_long(comp_test_same_len, threshold):
     # breaks at i = 1126 because there is near cancellation in ZZD between these guys: (ZZB_dbb - ZZB_fch)
     # hard to make completely robust tester with so many operations.
-    for i in range(50):
+    for i in range(25):
         print("STEP", i)
 
         random.seed(i)

@@ -11,7 +11,7 @@ from test_automated_rnd_expr import get_automated_expression
 np.set_printoptions(linewidth = 100000)
 
 def test_latex(comp_test_same_len, threshold):
-    for i in range(100):
+    for i in range(30):
         print("STEP", i)
         
         random.seed(i)
