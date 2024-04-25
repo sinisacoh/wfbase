@@ -11,6 +11,8 @@ Now to run tox tests simply run in the wfbase/ folder
 
    tox
 
+Ideally, run the same test on mac intel, mac arm, windows and linux (virtual) machine.
+
 2. Now let us create a release branch off of develop:
 
   git checkout develop
@@ -71,7 +73,6 @@ has been changed).
 
 Instructions:   https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 
-
 8a. Make sure that you link ../../private/.pypirc_MOVE_TO_HOME to home folder as ~/.pypirc 
 This file contains a passwords so I'm not keeping it on github.
 
@@ -80,14 +81,16 @@ This file contains a passwords so I'm not keeping it on github.
   git checkout main
   git pull
   rm -rf dist
-  python setup.py sdist
+  python3 -m build
   twine upload dist/* -r testpypi
 
 8c. If you wish to test the package do this,
 
-  git checkout main
-  git pull
   pip install -i https://test.pypi.org/simple/ wfbase==?.?.?
+
+Maybe do this in a clean environment?
+
+Repeat these tests on mac intel, mac arm, windows and linux (virtual) machines as well.
 
 8d. When you are sure that this works you can officially upload it to pypi like this.
 Note that this code below should not be executed lightly! These lines will make
@@ -101,7 +104,7 @@ lines below:
   git checkout main
   git pull
   rm -rf dist
-  python setup.py sdist
+  python3 -m build
   twine upload dist/* -r pypi
   
 ******************************************************************
