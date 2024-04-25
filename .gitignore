@@ -2,6 +2,8 @@
 tests/.coverage
 .tox
 __pycache__
+build
+dist
 examples/data
 examples/*.pdf
 examples/*.png
