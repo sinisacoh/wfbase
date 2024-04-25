@@ -3,6 +3,8 @@ release is in develop branch on the git.  Also, I will assume that we have
 tested already the website to some extent and that the code can run all the
 examples when creating the website, and that all tox tests are passing.
 
+To run tox tests simply run "tox" in the wfbase/ folder
+
 2. Now let us create a release branch off of develop:
 
   git checkout develop
@@ -60,6 +62,9 @@ it into develop and main (checking for and resolving conflicts if develop
 has been changed).
 
 8. Now A will update the code on the PyPI server.
+
+Instructions:   https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
+
 
 8a. Make sure that you link ../../private/.pypirc_MOVE_TO_HOME to home folder as ~/.pypirc 
 This file contains a passwords so I'm not keeping it on github.
