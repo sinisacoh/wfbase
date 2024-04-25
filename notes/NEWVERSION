@@ -63,6 +63,9 @@ has been changed).
 
 8. Now A will update the code on the PyPI server.
 
+Instructions:   https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
+
+
 8a. Make sure that you link ../../private/.pypirc_MOVE_TO_HOME to home folder as ~/.pypirc 
 This file contains a passwords so I'm not keeping it on github.
 
