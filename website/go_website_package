@@ -14,12 +14,12 @@ rm -rf ../dist
 (cd ../examples; tar -zcvf run_dft_output.tar.gz run_dft_output ; mv run_dft_output.tar.gz ../website/source/misc)
 
 # iCloud nonsense
-(cd source/ ;                           rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/misc/ ;                      rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/ ;              rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/images/ ;       rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/images/thumb/ ; rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd ../examples/ ;                      rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+(cd source/ ;                           rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/misc/ ;                      rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/ ;              rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/images/ ;       rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/images/thumb/ ; rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd ../examples/ ;                      rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
 
 # copy all releases of the code
 cp local/release/ver_*/*.tar.gz source/misc

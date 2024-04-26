@@ -9,11 +9,17 @@ To install WfBase run the following command in your terminal::
 
   pip install wfbase --upgrade
 
-If the command above is `raising errors <https://stackoverflow.com/questions/68922959/cant-install-pyfftw-with-python-3-9-in-macos-m1>`_ about pyfftw or spglib (at the time of writing (April 2024) this seems to happen with Anaconda's python for Apple's M-series processors), please run the following in your terminal, and then repeat the command above to install WfBase::
+If the *pip* command from above is raising an error about missing pyfftw, or when running WfBase you get a warning that pyfftw is not installed, try running the following command::
 
   conda install -c conda-forge pyfftw
-  conda install -c conda-forge spglib
 
+and then re-run the pip installation of WfBase::
+
+  pip install wfbase --upgrade
+  
+The issue with *pyfftw* seems to occur on Apple's M-series processors (*osx-arm64*), as *pip* at the moment seems to be missing a pre-compiled version of *pyfftw* for *osx-arm64*.  See `here for more information <https://stackoverflow.com/questions/68922959/cant-install-pyfftw-with-python-3-9-in-macos-m1>`_.
+
+  
 Release notes and version list
 ------------------------------
 
