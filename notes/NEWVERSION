@@ -12,6 +12,10 @@ Now to run tox tests simply run in the wfbase/ folder
    tox
 
 Ideally, run the same test on mac intel, mac arm, windows and linux (virtual) machine.
+On windows 11 after you install anaconda you need to add ...\anaconda3 and ...\anaconda3\Scripts to
+your path under "Environmental variables".  However, I encountered some issues
+in running tox on windows11, seemingly unrelated to wfbase.  WfBase Pytest on
+windows11 seems to be running just fine.
 
 2. Now let us create a release branch off of develop:
 
