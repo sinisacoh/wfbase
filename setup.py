@@ -22,8 +22,9 @@ setup(name = 'wfbase',
       long_description_content_type = "text/markdown",
       platforms = ['UNIX', 'MAC OS X', 'Windows'],
       install_requires = [\
-          "wannierberri", "pyfftw", "spglib", "irrep", "untangle",\
-          "imgcat", "numpy", "numba", "pyparsing", "matplotlib", "opt_einsum", "textwrap", "pillow"
+      "wannierberri", "pyfftw", "spglib", "irrep", "untangle",\
+      "imgcat", "opt_einsum",
+      "sympy", "numpy", "numba", "pyparsing", "matplotlib",  "pillow", "requests", 
       ],
-      python_requires = ">=3.7",
+      python_requires = ">=3",
       )

@@ -133,5 +133,9 @@ pull request on the website.
   git branch -d feature_DESCRIPTOR                  ! locally
   git push origin --delete feature_DESCRIPTOR       ! remotely
 
-8. When we have decided to issue a new release of the code we should
+8. To make sure you have the latest version locally, do
+
+  git pull --all
+
+9. When we have decided to issue a new release of the code we should
 follow steps described in NEWVERSION

@@ -9,6 +9,7 @@ examples/*.pdf
 examples/*.png
 examples/run_dft
 tests/__pycache__
+tests/au_fcc.wf
 website/__downloaded_database_not_in_github
 website/build
 website/source/all_examples
