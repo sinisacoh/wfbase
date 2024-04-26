@@ -26,5 +26,5 @@ setup(name = 'wfbase',
       "imgcat", "opt_einsum",
       "sympy", "numpy", "numba", "pyparsing", "matplotlib",  "pillow", "requests", 
       ],
-      python_requires = ">=3.7",
+      python_requires = ">=3",
       )
