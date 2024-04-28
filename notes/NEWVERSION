@@ -17,6 +17,10 @@ your path under "Environmental variables".  However, I encountered some issues
 in running tox on windows11, seemingly unrelated to wfbase.  WfBase Pytest on
 windows11 seems to be running just fine.
 
+You can also run a linter using:
+
+  pylama wfbase.py --options tox.ini
+
 2. Now let us create a release branch off of develop:
 
   git checkout develop

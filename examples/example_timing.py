@@ -10,16 +10,16 @@ on your computer might be different.
 As the number of k-points in the fine interpolation mesh increases,
 it becomes less efficient to store all of that information in the
 memory.  Instead, it is more efficient to perform many calculations
-over smaller grids.  This same strategy is used in example
-:ref:`sphx_glr_all_examples_example_conv.py`
+over smaller grids.  This same strategy is used in
+:ref:`this example <sphx_glr_all_examples_example_conv.py>`.
 
 On the other hand, if one uses brute forced sums (this uses Numba
 under the hood) then scaling with a k-point size is better.
 
 These results will also depend on what kind of expression you are using.
 Depending on the number of distinct indices, and the number of contractions,
-you might find that brute forced sums (using Numba) might become less
-efficient than numpy vectorizations.
+you might find that brute forced sums (using Numba) might become significantly
+less efficient than numpy vectorizations.
 
 """
 

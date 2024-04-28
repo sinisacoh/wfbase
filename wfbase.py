@@ -1,5 +1,5 @@
 # Wavefunction database and computation (WfBase)
-# Aprik 22nd, 2024
+# April 26th, 2024
 __version__='0.0.2'
 
 # Copyright 2024 by Sinisa Coh
@@ -2993,7 +2993,7 @@ class _ComputatorWf():
                 right_type = "int or float"
             elif par.get_name() in ["constant"]:
                 if right not in self.all_quantities():
-                    _raise_value_error("Constant: " + right_core + " in the greater/lesser condition on the right, is not defined.")
+                    _raise_value_error("Constant: " + right + " in the greater/lesser condition on the right, is not defined.")
                 right_latex = self._return_in_latex(right, None)
                 right_bfs = "__object_" + right
                 right = "__object[\"" + right + "\"]"
@@ -5991,7 +5991,7 @@ class PrefactorSIMultDivOp():
             nxt = self.value[j + 1]
             tmpR = nxt.eval()
             if isinstance(tmpR, FundConst) == False:
-                _raise_value_error("Only allowed to multiply/divide fundamental constants. " + str(trmR))
+                _raise_value_error("Only allowed to multiply/divide fundamental constants. " + str(tmpR))
             if op == "*":
                 ret = ret._multiply_with(tmpR)
             elif op == "/":
