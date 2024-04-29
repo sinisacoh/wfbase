@@ -59,8 +59,9 @@ QE_MAGN_SIGN = -1.0
 
 def download_data_if_needed(silent = False):
     r"""
-    Downloads the latest version of the WfBase database (file *data.zip*) and unpacks it in
-    the *data/* folder.  Will not erase previous *data/* folder if it already exists.
+    Downloads the latest version of the WfBase database (file *data.zip*)
+    and unpacks it in the *data/* folder.  Will not erase previous *data/*
+    folder if it already exists.
 
     You can manually download the same database by following
     :ref:`these instructions <database>`.
@@ -72,9 +73,9 @@ def download_data_if_needed(silent = False):
     when you use the *load* function.  This way you don't need to have multiple
     copies of the database on your machine.
 
-    :param silent: If set to *True* will not print an error message if unable to
-      download, or unzip, the database, or the database was already downloaded.
-      The default is *False*.
+    :param silent: If set to *True* will not print an error message if
+      unable to download, or unzip, the database, or the database was
+      already downloaded. The default is *False*.
 
     Example usage::
 
@@ -138,8 +139,9 @@ def load(*args, **kwargs):
       sure what is going on.  It is strongly advised to keep this parameter as is.
 
     :returns:
-      * **db** -- database object of type :class:`DatabaseWf <wfbase.DatabaseWf>`.  This object
-        can be used next to create computators of various physical quantities.
+      * **db** -- database object of type :class:`DatabaseWf <wfbase.DatabaseWf>`.
+        This object can be used next to create computators of various physical
+        quantities.
 
     Example usage::
 
@@ -173,8 +175,9 @@ def load_from_wannierberri(*args, **kwargs):
       new Fermi level is zero.
 
     :returns:
-      * **db** -- database object of type :class:`DatabaseWf <wfbase.DatabaseWf>`.  This object
-        can next be used to create computators of various physical quantities.
+      * **db** -- database object of type :class:`DatabaseWf <wfbase.DatabaseWf>`.
+        This object can next be used to create computators of various physical
+        quantities.
 
     Example usage::
 
@@ -252,7 +255,8 @@ class DatabaseWf():
         r"""
         Returns information about the computation stored in the database .wf file.  This
         information here could be used by the user to redo the DFT calculation
-        from scratch, as shown in :ref:`this example <sphx_glr_all_examples_example_standalone_prepare.py>`.
+        from scratch, as shown in
+        :ref:`this example <sphx_glr_all_examples_example_standalone_prepare.py>`.
 
         Note that there is a function with the same name that provides information
         about the computator, not about the database .wf file.  See here
@@ -296,54 +300,64 @@ class DatabaseWf():
 
             out += _make_rst_field("The version of this database file")
             out += "\n"
-            out += _format_one_block_simple_indent(str(self._add_info["data_version"]), indent = 4, start_and_end = False, max_line = max_line)
+            out += _format_one_block_simple_indent(str(self._add_info["data_version"]), indent = 4,
+                                                   start_and_end = False, max_line = max_line)
             out += "\n\n"
 
             out += _make_rst_field("Created using WfBase version")
             out += "\n"
-            out += _format_one_block_simple_indent(str(self._add_info["wfbase_version"]), indent = 4, start_and_end = False, max_line = max_line)
+            out += _format_one_block_simple_indent(str(self._add_info["wfbase_version"]), indent = 4,
+                                                   start_and_end = False, max_line = max_line)
             out += "\n\n"
 
         out += _make_rst_field("Currently loaded WfBase version by this script")
         out += "\n"
-        out += _format_one_block_simple_indent(str(__version__), indent = 4, start_and_end = False, max_line = max_line)
+        out += _format_one_block_simple_indent(str(__version__), indent = 4,
+                                               start_and_end = False, max_line = max_line)
         out += "\n\n"
 
         if self._loaded_from_wannierberri == False:
             out += _make_rst_field("Created using Wannier Berri version")
             out += "\n"
-            out += _format_one_block_simple_indent(str(self._add_info["wberri_version"]), indent = 4, start_and_end = False, max_line = max_line)
+            out += _format_one_block_simple_indent(str(self._add_info["wberri_version"]), indent = 4,
+                                                   start_and_end = False, max_line = max_line)
             out += "\n\n"
 
         out += _make_rst_field("Currently loaded Wannier Berri version")
         out += "\n"
-        out += _format_one_block_simple_indent(str(wberri.__version__), indent = 4, start_and_end = False, max_line = max_line)
+        out += _format_one_block_simple_indent(str(wberri.__version__), indent = 4,
+                                               start_and_end = False, max_line = max_line)
         out += "\n\n"
 
         if self._loaded_from_wannierberri == False:
             out += _make_rst_field("Input file for the SCF computation using pw.x from Quantum ESPRESSO")
             out += "\n"
-            out += _format_one_block_simple_indent(_adjust_input_file("scf", str(self._add_info["input_scf"])), indent = 4, start_and_end = True, max_line = max_line)
+            out += _format_one_block_simple_indent(_adjust_input_file("scf", str(self._add_info["input_scf"])), indent = 4,
+                                                   start_and_end = True, max_line = max_line)
             out += "\n\n"
 
             out += _make_rst_field("Input file for the NSCF computation using pw.x from Quantum ESPRESSO")
             out += "\n"
-            out += _format_one_block_simple_indent(_adjust_input_file("nscf", str(self._add_info["input_nscf"])), indent = 4, start_and_end = True, max_line = max_line)
+            out += _format_one_block_simple_indent(_adjust_input_file("nscf", str(self._add_info["input_nscf"])), indent = 4,
+                                                   start_and_end = True, max_line = max_line)
             out += "\n\n"
 
             out += _make_rst_field("Pseudopotentials used in the calculation")
             out += "\n"
-            out += _format_one_block_simple_indent(" , ".join(self._get_psp()), indent = 4, start_and_end = False, max_line = max_line)
+            out += _format_one_block_simple_indent(" , ".join(self._get_psp()), indent = 4,
+                                                   start_and_end = False, max_line = max_line)
             out += "\n\n"
 
             out += _make_rst_field("Input file for pw2wannier90.x from Quantum ESPRESSO")
             out += "\n"
-            out += _format_one_block_simple_indent(_adjust_input_file("pw2wan", str(self._add_info["input_pw2wan"])), indent = 4, start_and_end = True, max_line = max_line)
+            out += _format_one_block_simple_indent(_adjust_input_file("pw2wan", str(self._add_info["input_pw2wan"])), indent = 4,
+                                                   start_and_end = True, max_line = max_line)
             out += "\n\n"
 
             out += _make_rst_field("Input file for Wannier90")
             out += "\n"
-            out += _format_one_block_simple_indent(str(self._add_info["input_w90"]), indent = 4, start_and_end = True, max_line = max_line)
+            out += _format_one_block_simple_indent(str(self._add_info["input_w90"]), indent = 4,
+                                                   start_and_end = True, max_line = max_line)
             out += "\n\n"
 
         if print_to_screen:
@@ -387,7 +401,8 @@ class DatabaseWf():
             _stop_because_loaded_from_wannierberri()
 
         if os.path.exists(folder) == True:
-            _raise_value_error("Folder " + folder + " already exists.  Stopping.  (To continue, either use a different folder name, or erase folder " + folder + " yourself.)")
+            _raise_value_error("Folder " + folder + " already exists.  Stopping. " + 
+                               " (To continue, either use a different folder name, or erase folder " + folder + " yourself.)")
 
         os.mkdir(folder)
 
@@ -415,7 +430,9 @@ mpirun -np 1  wannier90.x x
             f.write(txt)
 
 
-    def do_mesh(self, k_mesh = None, shift_k = [0.0, 0.0, 0.0], to_compute = ["psi", "A", "S", "dEdk"], formatted_output_latex = True, doublet_indices = False, reorder_orbitals = False):
+    def do_mesh(self, k_mesh = None, shift_k = [0.0, 0.0, 0.0],
+                to_compute = ["psi", "A", "S", "dEdk"],
+                formatted_output_latex = True, doublet_indices = False, reorder_orbitals = False):
         r"""
 
         Compute various quantities on a regular k-mesh in the Brillouin zone.
@@ -515,8 +532,8 @@ mpirun -np 1  wannier90.x x
           is the slow index.  All other quantities are left unchanged.
 
         :returns:
-          * **comp** -- computator object of type :class:`_ComputatorWf <wfbase._ComputatorWf>`.  This object
-            can next be used to evaluate various physical quantities.
+          * **comp** -- computator object of type :class:`_ComputatorWf <wfbase._ComputatorWf>`.
+            This object can next be used to evaluate various physical quantities.
 
         Example usage::
 
@@ -598,13 +615,16 @@ mpirun -np 1  wannier90.x x
 
         for thing in to_compute:
             if thing == "psi":
-                computed[thing] = _potentially_reorder_orbitals(np.copy(np.transpose(self._data_K.UU_K, (0, 2, 1))), 2, reorder_orbitals)
+                computed[thing] = _potentially_reorder_orbitals(
+                    np.copy(np.transpose(self._data_K.UU_K, (0, 2, 1))),
+                    2, reorder_orbitals)
             elif thing == "A":
                 computed[thing] = np.copy(self._data_K.A_H)
             elif thing == "S":
                 computed[thing] = np.copy(self._data_K.Xbar("SS"))
             elif thing == "dEdk":
-                computed[thing] = np.copy(np.diagonal(self._data_K.Xbar('Ham', 1), axis1 = 1, axis2 = 2).transpose(0, 2, 1))
+                computed[thing] = np.copy(
+                    np.diagonal(self._data_K.Xbar('Ham', 1), axis1 = 1, axis2 = 2).transpose(0, 2, 1))
             elif thing == "E":
                 continue
             else:
@@ -623,7 +643,8 @@ mpirun -np 1  wannier90.x x
         if self._only_essentials == False:
             props = self.__comp_common(computed, props, reorder_orbitals)
 
-        comp = _ComputatorWf(props, formatted_output_latex, doublet_indices, self._loaded_from_wannierberri)
+        comp = _ComputatorWf(props, formatted_output_latex,
+                             doublet_indices, self._loaded_from_wannierberri)
 
         comp._computated_using = "do_mesh"
 
@@ -636,7 +657,10 @@ mpirun -np 1  wannier90.x x
 
         return comp
 
-    def do_list(self, k_list, to_compute = [], formatted_output_latex = True, doublet_indices = False, reorder_orbitals = False):
+    def do_list(self, k_list, to_compute = [],
+                formatted_output_latex = True,
+                doublet_indices = False,
+                reorder_orbitals = False):
         r"""
 
         Similar to :func:`do_mesh <wfbase.DatabaseWf.do_mesh>` with the difference that
@@ -703,13 +727,16 @@ mpirun -np 1  wannier90.x x
             computed["E"].append(np.copy(self._data_K.E_K[0]))
             for thing in to_compute:
                 if thing == "psi":
-                    computed[thing].append(_potentially_reorder_orbitals(np.copy(np.transpose(self._data_K.UU_K, (0, 2, 1))[0]), 2, reorder_orbitals))
+                    computed[thing].append(_potentially_reorder_orbitals(
+                        np.copy(np.transpose(self._data_K.UU_K, (0, 2, 1))[0]),
+                        2, reorder_orbitals))
                 elif thing == "A":
                     computed[thing].append(np.copy(self._data_K.A_H[0]))
                 elif thing == "S":
                     computed[thing].append(np.copy(self._data_K.Xbar("SS")[0]))
                 elif thing == "dEdk":
-                    computed[thing].append(np.copy(np.diagonal(self._data_K.Xbar('Ham', 1), axis1 = 1, axis2 = 2).transpose(0, 2, 1)[0]))
+                    computed[thing].append(
+                        np.copy(np.diagonal(self._data_K.Xbar('Ham', 1), axis1 = 1, axis2 = 2).transpose(0, 2, 1)[0]))
                 elif thing == "E":
                     continue
                 else:
@@ -919,7 +946,8 @@ mpirun -np 1  wannier90.x x
         props["numwann"] = \
             {
                 "value": int(self._add_info["num_wann"]),
-                "origin_story": "The number of Wannier bands.  Also, the number of electron states that are computed at each k-point.",
+                "origin_story": "The number of Wannier bands. " + 
+                " Also, the number of electron states that are computed at each k-point.",
                 "units": Units(eV = 0, Ang = 0, muB = 0),
             }
         props["coarsekmesh"] = \
@@ -974,7 +1002,10 @@ mpirun -np 1  wannier90.x x
             props["orbitallabels"] = \
                 {
                     "value": _potentially_reorder_orbitals(np.array(self._add_info["orbital_labels"]), 0, reorder_orbitals),
-                    "origin_story": "Array of names of localized atomic-like orbitals used in the decomposition of the wavefunction *psi*. Uparrow and downarrow refer to spin angular momentum (opposite to the spin magnetic moment)." + " " + str(self._add_info["orbital_labels_description"]),
+                    "origin_story": "Array of names of localized atomic-like orbitals" + 
+                    " used in the decomposition of the wavefunction *psi*. Uparrow and " + 
+                    "downarrow refer to spin angular momentum (opposite to the spin magnetic moment)." + 
+                    " " + str(self._add_info["orbital_labels_description"]),
                     "indices_info": {
                         "canonical_names": "p",
                         "explanation": ["localized orbital index",
@@ -1056,7 +1087,13 @@ mpirun -np 1  wannier90.x x
         return props
 
 
-    def do_path(self, k_str, to_compute = [], num_steps_first_segment = 30, latex_tick_labels = True, formatted_output_latex = True, doublet_indices = False, reorder_orbitals = False):
+    def do_path(self, k_str,
+                to_compute = [],
+                num_steps_first_segment = 30,
+                latex_tick_labels = True,
+                formatted_output_latex = True,
+                doublet_indices = False,
+                reorder_orbitals = False):
         r"""
         Similar to :func:`do_mesh <wfbase.DatabaseWf.do_mesh>` with the difference that
         now the returned computator contains information on a list
@@ -1142,7 +1179,8 @@ mpirun -np 1  wannier90.x x
         kred_end = []
         for p in pnts:
             if p.upper() not in kpoint_info.keys():
-                _raise_value_error("User specified incorrect label of a special k-point \"" + p + "\".  Allowed values for this system are " + str(list(kpoint_info.keys())))
+                _raise_value_error("User specified incorrect label of a special k-point \"" + p + 
+                                   "\".  Allowed values for this system are " + str(list(kpoint_info.keys())))
             kred_end.append(kpoint_info[p.upper()][0])
         kred_end = np.array(kred_end)
 
@@ -1164,7 +1202,8 @@ mpirun -np 1  wannier90.x x
             num_steps.append(int(round(num_steps_first_segment)))
             kdist_zero = distance_kpts_red(kred_end[0], kred_end[1])
             for i in range(2, kred_end.shape[0]):
-                tmp = np.round(num_steps_first_segment * distance_kpts_red(kred_end[i - 1], kred_end[i]) / kdist_zero)
+                tmp = np.round(num_steps_first_segment * distance_kpts_red(kred_end[i - 1],
+                               kred_end[i]) / kdist_zero)
                 if tmp < 2:
                     tmp = 2
                 num_steps.append(int(tmp))
@@ -1213,7 +1252,8 @@ mpirun -np 1  wannier90.x x
         comp.new("kspecdist", {"value": k_spec_dist,
                                "units": Units(eV = 0, Ang = -1, muB = 0),
                                "origin_story": """Distance of special points along the specified k-path.
-                               For example, you can use this for x-location of special points on your band structure plot.""",
+                               For example, you can use this for x-location of special
+                               points on your band structure plot.""",
                                "indices_info": {
                                    "canonical_names": "s",
                                    "explanation": ["index of the special k-points along the path",
@@ -1440,7 +1480,11 @@ class _ComputatorWf():
 
     """
 
-    def __init__(self, quantities={}, formatted_output_latex = True, doublet_indices = False, loaded_from_wannierberri = False):
+    def __init__(self,
+                 quantities={},
+                 formatted_output_latex = True,
+                 doublet_indices = False,
+                 loaded_from_wannierberri = False):
         self.__quantities = quantities
 
         self._computated_using = ""
@@ -1941,7 +1985,7 @@ class _ComputatorWf():
 
         ret_value = self.__quantities[core]["units"]._to_SI(self.get(core, "value"))
 
-        if prefactor != None:
+        if prefactor is not None:
             ret_latex_obj= self.get_latex(core)
             data = _parse_prefactor_SI_units_fundamental_constants(prefactor)
             ret_value = data._numerical_value() * ret_value
@@ -2097,7 +2141,11 @@ class _ComputatorWf():
         self.__check_similar_tilde(core)
         if isinstance(data, str):
             data = _parse_value_and_units(data)
-        if isinstance(data, int) or isinstance(data, float) or isinstance(data, complex) or isinstance(data, np.ndarray) or isinstance(data, list):
+        if isinstance(data, int) or \
+           isinstance(data, float) or \
+           isinstance(data, complex) or \
+           isinstance(data, np.ndarray) or \
+           isinstance(data, list):
             data = {"value": np.array(data)}
         if "units" not in data.keys():
             if units_as is not None:
@@ -2182,7 +2230,8 @@ class _ComputatorWf():
             _raise_value_error("Variable name: " + core + " is invalid.  It must contain only letters and at most one ~.")
 
         if core == "j":
-            _raise_value_error("Quantity name j is not allowed as it might be confusing as we use the same symbol to represent square root of negative one.")
+            _raise_value_error("Quantity name j is not allowed as it might be confusing " + 
+                               "as we use the same symbol to represent square root of negative one.")
 
     def __does_core_exist(self, core):
         if core not in self.all_quantities():
@@ -2207,7 +2256,9 @@ class _ComputatorWf():
         self.__quantities[core]["value"] = np.array(self.__quantities[core]["value"])
 
     def _return_in_latex(self, core, ind, do_latex_conjugate = False):
-        if "format" in self.all_quantity_keys(core) and self.__formatted_output_latex == True and self.__did_user_mess_with_values[core] == False:
+        if "format" in self.all_quantity_keys(core) and \
+           self.__formatted_output_latex == True and \
+           self.__did_user_mess_with_values[core] == False:
             performed_latex_conjugate = False
             if do_latex_conjugate == False:
                 use_str = self.get(core, "format")
@@ -2299,7 +2350,7 @@ class _ComputatorWf():
             value = np.array(use_energy < use_fermi, dtype = float)
             data = {
                 "value": value,
-                "origin_story": "Has an entry equal to 1 for all entries where " + \
+                "origin_story": "Has an entry equal to 1 for all entries where " + 
                 str(energy) + " < " + str(fermi) + " otherwise it is 0.",
                 "units": Units(eV = 0, Ang = 0, muB = 0),
             }
@@ -2316,7 +2367,8 @@ class _ComputatorWf():
             value = _fermi_dirac(use_energy, use_fermi, use_kbtemp)
             data = {
                 "value": value,
-                "origin_story": "Fermi-Dirac occupation factor between 1 and 0. It is close to 1 for all entries where " + \
+                "origin_story": "Fermi-Dirac occupation factor between 1 and 0. " + 
+                "It is close to 1 for all entries where " + 
                 str(energy) + " < " + str(fermi) + " otherwise it is close to 0.",
                 "units": Units(eV = 0, Ang = 0, muB = 0),
             }
@@ -2802,7 +2854,8 @@ class _ComputatorWf():
         else:
             pol_type = "circular"
 
-        latex_pol = use_pol.replace("j", "i").replace("+", " + ").replace("-", " - ").replace("x", r"{\rm x}").replace("y", r"{\rm y}").replace("z", r"{\rm z}")
+        latex_pol = use_pol.replace("j", "i").replace("+", " + ").replace("-", " - ")
+        latex_pol = latex_pol.replace("x", r"{\rm x}").replace("y", r"{\rm y}").replace("z", r"{\rm z}")
         if "+" in latex_pol:
             latex_pol_conj = latex_pol.replace("+", "-")
         elif "-" in latex_pol:
@@ -3019,7 +3072,11 @@ class _ComputatorWf():
                 "cond_value": txt,
                 "cond_inds": left_ind,
                 "cond_latex": self._return_in_latex(left_core, left_ind) + " " + op + " " + right_latex,
-                "cond_for_brute_force": {"left_core": left_core, "left_index": left_ind, "op": op, "right": right_bfs, "right_type": right_type}
+                "cond_for_brute_force": {"left_core": left_core,
+                                         "left_index": left_ind,
+                                         "op": op,
+                                         "right": right_bfs,
+                                         "right_type": right_type}
             })
 
             counter += 1
@@ -3087,7 +3144,6 @@ class _ComputatorWf():
                 continue
             elif "!=" in cond:
                 sp = cond.split("!=")
-                op = "!="
             else:
                 _raise_value_error("Condition must contain either < or > or !=.")
             if len(sp) != 2:
@@ -3117,13 +3173,19 @@ class _ComputatorWf():
         for dia in self._diagonals:
             # if indices in the diagonal don't have the same shape that could lead to ambiguities
             if brute_force_sums == False:
-                code._add_raw("if \"" + dia[0] +"\" in _orig_shp.keys() and \"" + \
-                              dia[1] +"\" in _orig_shp.keys():\n    if _orig_shp[\"" + \
-                              dia[0] + "\"] != _orig_shp[\"" + dia[1] + "\"]:\n        raise ValueError(\"Indices " +  \
+                code._add_raw("if \"" + dia[0] +"\" in _orig_shp.keys() and \"" + 
+                              dia[1] +"\" in _orig_shp.keys():\n    if _orig_shp[\"" + 
+                              dia[0] + "\"] != _orig_shp[\"" + dia[1] + "\"]:\n        raise ValueError(\"Indices " +  
                               dia[0] + " and " + dia[1] + " must be of the same length, as they are used in a condition.\")", \
                               to_preamble = False, to_the_top = True)
 
-    def evaluate(self, in_eqns, conditions = "", brute_force_sums = False, optimize_divisions = True, optimize_recomputation = True, show_latex_with_div_opts = False):
+    def evaluate(self,
+                 in_eqns,
+                 conditions = "",
+                 brute_force_sums = False,
+                 optimize_divisions = True,
+                 optimize_recomputation = True,
+                 show_latex_with_div_opts = False):
         r"""
         This function can be used to evaluate a wide range of mathematical expressions.
         Einstein summation over repeating indices is assumed.
@@ -3150,8 +3212,9 @@ class _ComputatorWf():
           * "Quantities" -- defined in this computator.  For example, "E_kn" corresponds
             to the band energy associated with k-point k and band n.  This quantity
             can be anyone that is currently defined for the computator.  You can use the
-            function :func:`all_quantity_keys <wfbase._ComputatorWf.all_quantity_keys>` to get a list of all quantities currently
-            in the computator.  You can also use :func:`info <wfbase._ComputatorWf.info>` to get
+            function :func:`all_quantity_keys <wfbase._ComputatorWf.all_quantity_keys>` to
+            get a list of all quantities currently in the computator.  You can
+            also use :func:`info <wfbase._ComputatorWf.info>` to get
             extended information about all quantities in the computator.
             Note that you can use any set of letters as indices for quantities.
             For example, if your expression contains multiple
@@ -3180,14 +3243,15 @@ class _ComputatorWf():
 
           * "Parentheses." --  Only regular parentheses "(" and ")" are allowed.
 
-          * "Assignment operators" -- are one of these three: <=, <+=, or <<=.  The assignment operator assigns
-            to the new quantity on the left the expression given on the right.  For
-            example, "A_ik <= B_ij * C_jk" would do a regular matrix multiplication
-            of B and C and assign the result to a new quantity A.  Related assignment
-            operator "<+=" assumes that the quantity "A" on the left already exists.
-            This operator will compute the value of the right hand side and add
-            it to the value of the preexisting quantity "A".  This is similar to the
-            behavior of "+=" operator in python.  Finally, "<<=" operator will erase the previously existing
+          * "Assignment operators" -- are one of these three: <=, <+=, or <<=.
+            The assignment operator assigns to the new quantity on the
+            left the expression given on the right.  For example, "A_ik <= B_ij * C_jk"
+            would do a regular matrix multiplication of B and C and assign
+            the result to a new quantity A.  Related assignment operator "<+=" assumes
+            that the quantity "A" on the left already exists. This operator will compute
+            the value of the right hand side and add it to the value of the
+            preexisting quantity "A".  This is similar to the behavior of "+="
+            operator in python.  Finally, "<<=" operator will erase the previously existing
             quantity "A" on the left, and it will create a new quantity with the
             value of whatever is on the right of "<<=".
 
@@ -3468,7 +3532,8 @@ class _ComputatorWf():
                 par_only_for_latex = _my_parse_string(self._parser, use_for_latex_eqn, parse_all = True)
                 par_only_for_latex = par_only_for_latex[0]
                 if isinstance(par_only_for_latex, EvalArrowOp):
-                    ret_only_for_latex, _ignore, _ignore = par_only_for_latex.eval(self, code_only_for_latex, allow_storing_data = True, call_from_main_evaluate = True)
+                    ret_only_for_latex, _ignore, _ignore = par_only_for_latex.eval(self,
+                            code_only_for_latex, allow_storing_data = True, call_from_main_evaluate = True)
                 else:
                     ret_only_for_latex = par_only_for_latex.eval(self, code_only_for_latex)
                 ret["latex"] = ret_only_for_latex["latex"]
@@ -3482,14 +3547,16 @@ class _ComputatorWf():
                 self._order_parsed += 1
                 ret["brute_force_sums"] = brute_force_sums
                 if store_to in self.all_quantities():
-                    _raise_value_error("Quantity " + store_to + " already defined! You can't use <= if quantity on the left of it was defined already.  Use <<= to overwrite previously defined quantity.")
+                    _raise_value_error("Quantity " + store_to + \
+                    " already defined! You can't use <= if quantity on the left of it was defined already.  Use <<= to overwrite previously defined quantity.")
                 self.new(store_to, ret)
             elif mode == "<<=": # replacement
                 ret["parsed_string"] = raw_eqn
                 ret["parsed_condition"] = conditions
                 ret["brute_force_sums"] = brute_force_sums
                 if store_to not in self.all_quantities():
-                    _raise_value_error("Quantity " + store_to + " was not defined earlier!  Operator <<= is used to replace the tensor on the left of it with new value.")
+                    _raise_value_error("Quantity " + store_to + \
+                    " was not defined earlier!  Operator <<= is used to replace the tensor on the left of it with new value.")
                 self.remove(store_to)
                 self.new(store_to, ret)
                 if brute_force_sums == False:
@@ -3616,7 +3683,7 @@ class _ComputatorWf():
             # this condition is here as otherwise I would need to figure
             # out which indices were duplicated (therefore summed over) and which were not
             # but this choice would have to be consistent with what is done in case with brute_force_sums = False
-            _raise_value_error("If parameter brute_force_sums is set to True, then you must use one of the arrow operators " + \
+            _raise_value_error("If parameter brute_force_sums is set to True, then you must use one of the arrow operators " + 
                                "in your expressions: <=, <+= or <<=.")
 
         if store_to is None and mode != "<=":
@@ -3754,7 +3821,8 @@ class _ComputatorWf():
 
         """
         if core is not None:
-            ret = self.__info_one_core(core, print_to_screen = print_to_screen, display = display, full = full, show_code = show_code, allow_multiple_expressions = allow_multiple_expressions)
+            ret = self.__info_one_core(core, print_to_screen = print_to_screen, display = display,
+                                       full = full, show_code = show_code, allow_multiple_expressions = allow_multiple_expressions)
             if print_to_screen == False:
                 return ret
         else:
@@ -3762,7 +3830,8 @@ class _ComputatorWf():
             keys.sort()
             ret = []
             for k in keys:
-                ret.append(self.__info_one_core(k, print_to_screen = print_to_screen, display = display, full = full, show_code = show_code, allow_multiple_expressions = allow_multiple_expressions))
+                ret.append(self.__info_one_core(k, print_to_screen = print_to_screen, display = display,
+                                                full = full, show_code = show_code, allow_multiple_expressions = allow_multiple_expressions))
             if print_to_screen == False:
                 return "\n".join(ret)
 
@@ -3821,20 +3890,21 @@ class _ComputatorWf():
                         #
                         if number_eq > 1 and which_eq > 1:
                             if allow_multiple_expressions == True:
-                                out += _format_one_block("*Note!* You evaluated " + str(number_eq) + " equation(s) in the same string at the same time. " +\
-                                                         "Your quantity " + str(core) + " was evaluated as the equation number " + str(which_eq) + \
-                                                         " .  Therefore, there were " + str(which_eq - 1) + " expression(s) computed before this one. " + \
-                                                         "The output below includes computations of only one quantity.  However, some of the terms here " + \
-                                                         "might have been computed in earlier quantities.  Therefore, the code below potentially can't be executed " + \
-                                                         "on its own, in isolation from the earlier " + str(which_eq - 1) + " expression(s).  Additionally, " + \
-                                                         "it is possible that some of the quantities used in this expression were modified by the previous expression(s).")
+                                out += _format_one_block(\
+                                  "*Note!* You evaluated " + str(number_eq) + " equation(s) in the same string at the same time. " +
+                                  "Your quantity " + str(core) + " was evaluated as the equation number " + str(which_eq) + \
+                                  " .  Therefore, there were " + str(which_eq - 1) + " expression(s) computed before this one. " + 
+                                  "The output below includes computations of only one quantity.  However, some of the terms here " + 
+                                  "might have been computed in earlier quantities.  Therefore, the code below potentially can't be executed " + 
+                                  "on its own, in isolation from the earlier " + str(which_eq - 1) + " expression(s).  Additionally, " + 
+                                  "it is possible that some of the quantities used in this expression were modified by the previous expression(s).")
                                 out += "\n\n"
                                 out += _format_one_block_simple_indent(code, indent = 0, start_and_end = True, dont_indent_first = False)
                             else:
                                 out += _format_one_block(\
                                     "Will not display code because this quantity was evaluated as equation number " + str(which_eq) + \
-                                    " out of total " + str(number_eq) + " equations.  This can lead to ambiguities. If you still " + \
-                                    "insist on getting partial code for this quantity, " + \
+                                    " out of total " + str(number_eq) + " equations.  This can lead to ambiguities. If you still " + 
+                                    "insist on getting partial code for this quantity, " + 
                                     "please set parameter allow_multiple_expressions to True when you call .info() function.")
                                 out += "\n\n"
                         else:
@@ -4045,7 +4115,8 @@ def _process_index_information(indices_info):
     ret_ind += "This quantity has these indices\n[" + ", ".join(indices_info["canonical_names"]) + "]"
     ret_ind += "\n"
     if "definition" in indices_info.keys():
-        ret_ind += "\nDefinition of the quantity in terms of the same indices as above\n" + _replace_star_with_indices(indices_info["definition"], list(indices_info["canonical_names"]))
+        ret_ind += "\nDefinition of the quantity in terms of the same indices as above\n" + \
+            _replace_star_with_indices(indices_info["definition"], list(indices_info["canonical_names"]))
         ret_ind += "\n"
 
     ret_def = ""
@@ -4303,12 +4374,14 @@ class Units():
             _simple = ex["value"]
             for s in _simple:
                 if s not in "()*+-/^j.0123456789 ":
-                    _raise_value_error("""Currently exponents can only be numerical values.
-                    You are not allowed to use constants or tensors, such as A_ij^(B + 3).
-                    You are allowed to do things like A_ij^(-3.0) or similar. """ + _simple)
+                    _raise_value_error("""If you use (...)^(,,,) and if "..." has units
+                    then ",,," can only be a numerical value.
+                    You are not allowed to use constants or tensors, such as A_ij^(B + 3),
+                    as long as A has units.  You are allowed to do things
+                    like A_ij^(-3.0) or similar. """ + _simple)
             try:
                 numerical_value = eval(_simple)
-            except:
+            except Exception:
                 traceback.print_stack()
                 print()
                 _raise_value_error("""Currently exponents can only be numerical values.
@@ -5149,9 +5222,9 @@ def _add_filters_to_einsum(indices_from, indices_to, filters):
         if howmany == 0:
             continue
         elif howmany != len(filt["cond_inds"]):
-            _raise_value_error("You specified greater/lesser condition involving indices " + filt["cond_inds"] + ". " + \
-                             "Therefore, for any sum in your expression, if any of these indices appear " + \
-                             "in the sum, all other should appear as well.  Otherwise, greater/lesser condition you " + \
+            _raise_value_error("You specified greater/lesser condition involving indices " + filt["cond_inds"] + ". " + 
+                             "Therefore, for any sum in your expression, if any of these indices appear " + 
+                             "in the sum, all other should appear as well.  Otherwise, greater/lesser condition you " + 
                              "specified makes no sense.")
         filter_from.append(filt["cond_inds"])
         filter_vals.append(filt["cond_value"])
@@ -5174,7 +5247,7 @@ def _add_diagonals_to_einsum(indices_from, indices_to, comp):
             if i in indices_to:
                 howmany_to += 1
         if howmany_from == 2 and howmany_to == 1:
-            _raise_value_error("You have specified this condition on indices ( " + dia[0] + " != " + dia[1] + " ) but now you have one index " + \
+            _raise_value_error("You have specified this condition on indices ( " + dia[0] + " != " + dia[1] + " ) but now you have one index " + 
                                "on the left of arrow operator and both on the right of it.  It is ambiguous what you want to do with this condition.")
         if howmany_from == 0 or howmany_from == 1:
             continue
@@ -5323,10 +5396,10 @@ class EvalAddSubOp():
             latex += " " + str(op).strip() + " " + tmpR["latex"].strip()
 
             if units._check_units_the_same(tmpR["units"]) == False:
-                _raise_value_error("Units in your expression do not match!  You are trying to " + \
-                                   {"+": "add", "-": "subtract"}[str(op).strip()] + " term with units of [" + \
-                                   str(units) + "] to term with units of [" + str(tmpR["units"]) + "]." +\
-                                   "BREAK The first term is:  " + prev_latex.strip()  + "\n" + \
+                _raise_value_error("Units in your expression do not match!  You are trying to " + 
+                                   {"+": "add", "-": "subtract"}[str(op).strip()] + " term with units of [" + 
+                                   str(units) + "] to term with units of [" + str(tmpR["units"]) + "]." +
+                                   "BREAK The first term is:  " + prev_latex.strip()  + "\n" + 
                                    "BREAK The second term is: " + tmpR["latex"].strip() + "\n")
 
             prev_latex = tmpR["latex"].strip()
@@ -5551,9 +5624,9 @@ def _broadcast_indices(vals, inds, operations, units, code, comp):
                 else:
                     result_axes_str = ""
                 if operations[j - 1] != "/":
-                    code._add_raw(result_val_name + " = " + \
-                                  result_val_name + result_axes_str + " " + \
-                                  operations[j - 1] + " " + \
+                    code._add_raw(result_val_name + " = " + 
+                                  result_val_name + result_axes_str + " " + 
+                                  operations[j - 1] + " " + 
                                   rot_r_val_code + r_axes_str)
                 else:
                     r_ind_ssj_expanded = []
@@ -5572,9 +5645,9 @@ def _broadcast_indices(vals, inds, operations, units, code, comp):
                     tsd = _prepare_soft_divide(result_val_name + result_axes_str, rot_r_val_code + r_axes_str, list(r_ind_ssj_expanded), \
                                                code, comp, parantheses_around = False)
                     if tsd is None:
-                        code._add_raw(result_val_name + " = " + \
-                                      result_val_name + result_axes_str + " " + \
-                                      operations[j - 1] + " " + \
+                        code._add_raw(result_val_name + " = " + 
+                                      result_val_name + result_axes_str + " " + 
+                                      operations[j - 1] + " " + 
                                       rot_r_val_code + r_axes_str)
                     else:
                         code._add_raw(result_val_name + " = " + tsd)
@@ -6122,7 +6195,7 @@ def _my_parse_string(obj, *args, **kwargs):
     except pp.ParseException as pe:
         traceback.print_stack()
         print()
-        print("\n" + \
+        print("\n" + 
               _format_one_block_simple_indent("Problem with parsing of this string (note, problem might occur after symbol ^ below):\n\n" + pe.explain(depth = 0),
                                              indent = 0,
                                              string_indent = "+++  ",
@@ -6132,7 +6205,7 @@ def _my_parse_string(obj, *args, **kwargs):
         exit()
 
 def _raise_value_error(s):
-    raise ValueError("\n\n" + "*"*81 + "\n" + \
+    raise ValueError("\n\n" + "*"*81 + "\n" + 
                      _format_one_block(s,
                                       indent = None,
                                       width = 80,
@@ -6141,7 +6214,7 @@ def _raise_value_error(s):
                      "\n" + "*"*81 + "\n")
 
 def _print_without_stopping(s):
-    print("\n\n" + "&"*81 + "\n" + \
+    print("\n\n" + "&"*81 + "\n" + 
           _format_one_block(s,
                             indent = None,
                             width = 80,
@@ -6585,8 +6658,8 @@ def _complicated_to_oned(dicmat):
 def _oned_to_complicated(e_info, e_data, e_keys):
     num_terms = e_info[0]
     first_shape_each_term = e_info[1 : num_terms + 1]
-    remaining_shape_len = e_info[num_terms + 1]
-    remaining_shape = e_info[num_terms + 2 : num_terms + 2 + remaining_shape_len]
+    #remaining_shape_len = e_info[num_terms + 1]
+    #remaining_shape = e_info[num_terms + 2 : num_terms + 2 + remaining_shape_len]
 
     keys = str(e_keys).split(",")
     dicmat = {}
