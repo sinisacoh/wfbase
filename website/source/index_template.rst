@@ -32,7 +32,7 @@ To install WfBase run the following command in your terminal (:ref:`more details
 Start guide
 -----------
 
-Below is a quick introduction to WfBase package.  If you need more information about WfBase, take a look at the :ref:`additional examples <examples>` of using WfBase.  See also :ref:`detailed technical description <usage>` of all WfBase functionalities.
+Below is a quick introduction to WfBase package.  If you need more information about WfBase, take a look at the :ref:`additional examples <examples>` of using WfBase.  See also the :ref:`detailed technical description <usage>` of all WfBase functionalities.
 
 Accessing database
 ~~~~~~~~~~~~~~~~~~
