@@ -54,13 +54,7 @@ and download the source.  Then do this,
   git add ver_OLD.OLD.OLD
   git add ver_OLD.OLD.OLD/wfbase-OLD.OLD.OLD.tar.gz
 
-4e. Update website/source/installation.rst with the new version. It is enough to
-change string "1.6.1" with "1.6.2" or similar.
-
-  git add installation.rst
-
-4f. Update website/source/conf.py. Version number appears at two places, just
-update the string.
+4f. Update "release" in website/source/conf.py
 
 4h. Do a quick grep on the old version number just to make sure there
 isn't something new that needs to be done.
