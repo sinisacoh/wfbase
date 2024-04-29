@@ -2,9 +2,9 @@
 Use the output of DFT calculations
 ==================================
 
-In this example, we use DFT input files prepared in the previous example file
-:ref:`sphx_glr_all_examples_example_standalone_prepare.py`  We then
-modified various parameters in those input files and redid the DFT
+In this example, we use DFT input files prepared in the previous
+:ref:`example <sphx_glr_all_examples_example_standalone_prepare.py>`.
+We then modified various parameters in those input files and redid the DFT
 calculations (Quantum ESPRESSO and Wannier90).  The example script
 below reads in the output from Quantum ESPRESSO and Wannier90 and
 loads those calculations into WfBase.
@@ -35,7 +35,7 @@ def main():
 
     wf.download_data_if_needed()
 
-    fig, ax = plt.subplots(figsize = (4.0, 3.0))
+    fig, ax = plt.subplots()
     for s in range(2):
         if s == 0:
             # regular calulation from wfbase database

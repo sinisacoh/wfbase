@@ -3,8 +3,8 @@ Simple k-mesh convergence
 =========================
 
 Demonstration of converging calculation with respect to the number
-of k-points in the mesh. As shown in the previous example
-:ref:`sphx_glr_all_examples_example_timing.py`, instead of running
+of k-points in the mesh. As shown in the 
+:ref:`previous example <sphx_glr_all_examples_example_timing.py>`, instead of running
 a single calculation on a large k-mesh (which takes a lot of memory,
 as all quantities need to be computed on this large k-mesh), the
 calculation is faster if it is split into many smaller calculations,
@@ -12,7 +12,7 @@ each with a randomly shifted grid.  (If you prefer to do a calculation
 with a single shot, without splitting it up into smaller randomly shifted
 grids, then try using :func:`evaluate <wfbase._ComputatorWf.evaluate>` with parameter
 *brute_force_sums* set to *True*.  To see how to use this example, take
-a look at example :ref:`sphx_glr_all_examples_example_brute_force.py`.)
+a look at :ref:`this example <sphx_glr_all_examples_example_brute_force.py>`.)
 
 The calculation proceeds until the value of optical conductivity does
 not change too much upon the addition of more k-points.
@@ -37,9 +37,9 @@ dependence on the exchange-correlation functional, and so on.
 However, to change the underlying DFT parameters, you will have to redo
 the DFT calculations themselves, as these are currently not stored in
 the database.  See the following two examples of how to perform these
-calculations.  First, example :ref:`sphx_glr_all_examples_example_standalone_prepare.py`
+calculations.  First :ref:`example <sphx_glr_all_examples_example_standalone_prepare.py>`
 will show you how to prepare input files for Quantum ESPRESSO and Wannier90.
-Second, example :ref:`sphx_glr_all_examples_example_standalone_recalculate.py`
+Second :ref:`example <sphx_glr_all_examples_example_standalone_recalculate.py>`
 will show you how to perform WfBase calculations once you get output
 from Quantum ESPRESSO and Wannier90.
 """
