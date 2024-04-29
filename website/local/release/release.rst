@@ -1,7 +1,7 @@
 Version 0.0.2 (current)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-April 24 2024: :download:`wfbase-0.0.2.tar.gz <misc/wfbase-0.0.2.tar.gz>`
+April 26 2024: :download:`wfbase-0.0.2.tar.gz <misc/wfbase-0.0.2.tar.gz>`
 
 * First release version.
 

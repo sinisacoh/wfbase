@@ -150,5 +150,10 @@ def five_evaluate(x, use_str, cores, conditions = "", divide_by_max = False):
 
 def error_testing(exc_info, match):
     cmpto = exc_info.value.args[0].replace("*"*81, "").replace("\n", " ").replace("***  ", "").strip()
+    print("First string:")
+    print(cmpto)
+    print("Second string:")
+    print(match)
+    print()
     assert exc_info.type is ValueError    
     assert cmpto == match

@@ -43,14 +43,18 @@ git push -u origin main
 
 Note that "origin" in git language means github repository.
 
-4. Also made main and develop branch protected.
+4. Also made main and develop branch protected.  In settings
+under "branches" select "Require a pull request before merging"
+and keep selected "Require approvals".
+
+5. In the settings change the default branch to "develop".
 
 *************************
 
 1. If B wants to add a feature to wfbase they should first get
 the repository:
 
-  git clone http://github.com/sinisacoh/wfbase
+  git clone git@github.com:sinisacoh/wfbase.git
 
 or, if it already in place, download updates
 
@@ -125,8 +129,13 @@ pull request on the website.
 
 7. The feature_DESCRIPTOR branch can now be deleted:
 
+  git checkout develop
   git branch -d feature_DESCRIPTOR                  ! locally
   git push origin --delete feature_DESCRIPTOR       ! remotely
 
-8. When we have decided to issue a new release of the code we should
+8. To make sure you have the latest version locally, do
+
+  git pull --all
+
+9. When we have decided to issue a new release of the code we should
 follow steps described in NEWVERSION

@@ -1,25 +1,25 @@
 #!/bin/bash
 
-PYTHON_FOR_BIN=python
+PYTHON_FOR_BIN=python3
 
 mkdir source/misc
 
 # construct source tarball and put it in misc folder
 rm -rf ../dist
 rm ../MANIFEST.in
-(cd .. ; $PYTHON_FOR_BIN setup.py sdist --format=gztar)
-(cd .. ; $PYTHON_FOR_BIN setup.py sdist --format=zip)
+(cd .. ; $PYTHON_FOR_BIN -m build)
 cp ../dist/*.tar.gz source/misc
-cp ../dist/*.zip source/misc
 rm -rf ../dist
 
 (cd ../examples; tar -zcvf run_dft_output.tar.gz run_dft_output ; mv run_dft_output.tar.gz ../website/source/misc)
 
-(cd source/ ;                           rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/misc/ ;                      rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/ ;              rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/images/ ;       rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
-(cd source/all_examples/images/thumb/ ; rm *\ 2.* ; rm *\ 3.* ; rm *\ 4.* )
+# iCloud nonsense
+(cd source/ ;                           rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/misc/ ;                      rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/ ;              rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/images/ ;       rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd source/all_examples/images/thumb/ ; rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
+(cd ../examples/ ;                      rm *\ 2* ; rm *\ 3* ; rm *\ 4* )
 
 # copy all releases of the code
 cp local/release/ver_*/*.tar.gz source/misc

@@ -4,8 +4,8 @@ Brute-forced sums
 
 Compares calculation without brute-forced sums (default, using numpy
 vectorization) and with brute-forced sums (using Numba).  To compare
-the speed of the two approaches, see the following example
-:ref:`sphx_glr_all_examples_example_timing.py`
+the speed of the two approaches, see the following 
+:ref:`example <sphx_glr_all_examples_example_timing.py>`.
 
 """
 

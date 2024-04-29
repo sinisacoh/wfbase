@@ -34,7 +34,10 @@ MERGE INTO DEVELOP
 
 REMOVE BRANCH
 
+git checkout develop
 git branch -d feature_DESCRIPTOR
 git push origin --delete feature_DESCRIPTOR
 
+git pull --all
+  
 *******************************************************
