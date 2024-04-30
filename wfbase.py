@@ -99,18 +99,20 @@ def download_data_if_needed(silent = False):
             _print_without_stopping(""" You called function *download_data_if_needed* in your script.
             This function is supposed to download the WfBase database from a website, and unpack
             it in folder named """ + folder + """.  However, this folder seems to exist already
-            in the current path.  Therefore, this script will not download anything. If you wish
-            to download the database, you could rename, or move, folder """ + folder + """ and then
-            run the script again.""")
+            in the current path.  Therefore, this script will not download anything.  You probably should
+            remove the call to function .download_data_if_needed() from your script.  If you insist
+            on forcing a new download of the database, you could rename, or move, folder """ + folder + """
+            and then run the script again.""")
         return
     elif os.path.exists(fname) == True:
         if silent == False:
             _print_without_stopping(""" You called function *download_data_if_needed* in your script.
             This function is supposed to download the WfBase database from a website as a
             single zip file called """ + fname + """.  However, this zip file seems to exist already
-            in the current path.  Therefore, this script will not download anything. If you wish
-            to  download the database, you could rename, or move, zip file """ + fname + """ and then
-            run the script again.""")
+            in the current path.  Therefore, this script will not download anything.  You probably should
+            remove the call to function .download_data_if_needed() from your script.  If you insist
+            on forcing a new download of the database, you could rename, or move, zip file """ + fname + """
+            and then run the script again.""")
         return
     url = "https://coh.engr.ucr.edu/wfbase/latest/" + fname
     if silent == False:
