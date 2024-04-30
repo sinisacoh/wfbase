@@ -64,3 +64,4 @@ sed -i '' 's/–/\&ndash;/g' build/html/*.html build/html/*/*.html build/html/*/
 sed -i '' 's/“/\&ldquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
 sed -i '' 's/”/\&rdquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
 sed -i '' 's/’/\&rsquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/¶/\&para;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
