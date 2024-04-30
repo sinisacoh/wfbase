@@ -25,16 +25,16 @@ WfBase is a software package providing an easy way to compute from first-princip
 
 This package also comes with a :ref:`built-in database <database>` of some simple materials.  The accuracy of the electronic structure in the database is on the level of common generalized gradient approximation (GGA) approximations to the density functional theory.  All calculations in the database include fully-relativistic effects, such as the spin-orbit interaction.
 
-To install WfBase run the following command in your terminal (:ref:`more details <installation>`)::
+To install WfBase run the following command in your terminal (:ref:`more details on installation <installation>`)::
 
   pip install wfbase --upgrade
+
+To learn about using WfBase take a look at the :ref:`list of examples <examples>` as well as the :ref:`detailed technical description <usage>` of all WfBase functionalities.
 
 Start guide
 -----------
 
-To learn about using WfBase take a look at the :ref:`list of examples <examples>` as well as the :ref:`detailed technical description <usage>` of all WfBase functionalities.
-
-Below is a quick start guide to using the WfBase package. 
+Here is a quick start guide to using the WfBase package. 
 
 Accessing database
 ~~~~~~~~~~~~~~~~~~
