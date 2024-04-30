@@ -88,7 +88,7 @@ This file contains a passwords so I'm not keeping it on github.
 
 8c. If you wish to test the package do this,
 
-  pip install -i https://test.pypi.org/simple/ wfbase==?.?.?
+  pip install --extra-index-url https://test.pypi.org/simple/ wfbase==?.?.?
 
 Maybe do this in a clean environment?
 
