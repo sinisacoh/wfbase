@@ -29,12 +29,12 @@ To install WfBase run the following command in your terminal (:ref:`more details
 
   pip install wfbase --upgrade
 
+To learn about using WfBase take a look at the :ref:`list of examples <examples>` as well as the :ref:`detailed technical description <usage>` of all WfBase functionalities.
+
 Start guide
 -----------
 
-To learn about using WfBase take a look at the :ref:`list of examples <examples>` as well as the :ref:`detailed technical description <usage>` of all WfBase functionalities.
-
-Below is a quick start guide to using the WfBase package. 
+Here is a quick start guide to using the WfBase package. 
 
 Accessing database
 ~~~~~~~~~~~~~~~~~~
