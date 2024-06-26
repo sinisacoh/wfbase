@@ -54,6 +54,7 @@ python create_output_page.py source/database_template.rst > source/__database.rs
 (cd source ; ln -s __database.rst database.rst)
 
 # now make everything together
+make clean
 make html SPHINXOPTS="-n"
 
 # get rid of non-template rst files
