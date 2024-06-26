@@ -40,6 +40,33 @@ The WfBase package relies heavily on several pieces of code developed by many au
 
   * Third, Wannier functions in Wannier90 were computed from the Bloch states computed by the first-principles density-functional theory software package `Quantum-ESPRESSO <https://www.quantum-espresso.org>`_.
 
+Development
+-----------
+
+Github repository of WfBase is available here
+
+  `<https://github.com/sinisacoh/wfbase>`_
+
+Citation
+--------
+
+Please cite the following DOI if you use WfBase in your research papers,
+
+::
+
+  https://doi.org/10.5281/zenodo.12528020
+
+Here is the BibTeX entry you can use,
+ 
+::
+  
+  @misc{wfbase,
+    title = {Wf{B}ase},
+    note  = {wavefunction database and computation},
+    doi   = {10.5281/zenodo.12528020},
+    url   = {https://doi.org/10.5281/zenodo.12528020}
+  }
+   
 Feedback
 --------
 
