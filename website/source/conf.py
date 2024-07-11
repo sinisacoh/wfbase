@@ -34,7 +34,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.imgmath',
               'sphinx.ext.viewcode',
               'sphinx_gallery.gen_gallery',
-              'sphinxcontrib.spelling',
+#              'sphinxcontrib.spelling',
 ]
 
 # https://sphinx-gallery.github.io/stable/getting_started.html
@@ -87,9 +87,7 @@ html_static_path = ['_static']
 html_css_files = ['css/my_custom.css']
 
 html_sidebars = {
-          '**':    ['globaltoc.html', 'localtoc.html', 'searchbox.html'],
-          'index': ['globaltoc.html', 'searchbox.html'],
-          'usage': ['globaltoc.html', 'searchbox.html'],
+          '**':    ['globaltoc.html', 'searchbox.html'],
        }
 
 # remove "show source" from website
