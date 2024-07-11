@@ -1,16 +1,5 @@
 #!/bin/bash
 
-PYTHON_FOR_BIN=python3
-
-mkdir source/misc
-
-# construct source tarball and put it in misc folder
-rm -rf ../dist
-rm ../MANIFEST.in
-(cd .. ; $PYTHON_FOR_BIN -m build)
-cp ../dist/*.tar.gz source/misc
-rm -rf ../dist
-
 (cd ../examples; tar -zcvf run_dft_output.tar.gz run_dft_output ; mv run_dft_output.tar.gz ../website/source/misc)
 
 # iCloud nonsense

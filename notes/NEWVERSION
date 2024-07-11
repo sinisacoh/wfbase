@@ -45,8 +45,6 @@ package.
 
 4d. Add folder in website/local/release/ver_ABC for the old version of the package,
 put in .tar.gz file. of the old version.
-*It is enough to do this for the old version only!*
-New version will be added automatically by the "go.." script in the website folder.
 To get old source file go to this website:
 https://pypi.org/project/wfbase/OLD.OLD.OLD/#files
 and download the source.  Then do this,
@@ -111,6 +109,28 @@ lines below:
   
 ******************************************************************
 
-9. A should now do the final update of the website from the "main" branch of git. 
+9. You should now update the tarball in the local/release/...
+You can either use the tarball you just uploaded to pypi or you can recreate it using
+this script:
 
-10. Update this file if needed.
+../website/prepare_local_package
+
+Now make sure to add the new version to the git
+
+  git add ver_NEW.NEW.NEW
+  git add ver_NEW.NEW.NEW/wfbase-NEW.NEW.NEW.tar.gz
+
+10. A should now do the final update of the website from the "main" branch of git. 
+
+11. You should update the zenodo information as well.
+
+wget https://github.com/sinisacoh/wfbase/archive/refs/heads/main.zip
+unzip main.zip
+mv wfbase-main wfbase
+wget https://coh.ucr.edu/wfbase/latest/data.zip
+unzip data.zip
+zip -r wfbase.zip data/ wfbase/
+
+and now upload new wfbase file to zenodo.
+
+12. Update this file if needed.
