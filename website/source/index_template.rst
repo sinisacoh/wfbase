@@ -65,7 +65,7 @@ You can now use basic quantities stored in *comp*, such as *E* and *A*, to compu
   "E_km > ef, E_kn < ef"
   )
 
-Given this information, WfBase will now
+Given this information, WfBase can now
 
 * parse the provided strings,
 
