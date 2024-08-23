@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir source/misc
+mkdir source/all_examples
+
 (cd ../examples; tar -zcvf run_dft_output.tar.gz run_dft_output ; mv run_dft_output.tar.gz ../website/source/misc)
 
 # iCloud nonsense
