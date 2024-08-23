@@ -50,8 +50,10 @@ make html SPHINXOPTS="-n"
 (cd source ; rm __examples.rst examples.rst __index.rst index.rst __quantities.rst quantities.rst __database.rst database.rst)
 
 # fix up the funny characters
-sed -i '' 's/–/\&ndash;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
-sed -i '' 's/“/\&ldquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
-sed -i '' 's/”/\&rdquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
-sed -i '' 's/’/\&rsquo;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
-sed -i '' 's/¶/\&para;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
+# https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
+sed -i '' 's/–/\&ndash;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/“/\&ldquo;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/”/\&rdquo;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/’/\&rsquo;/g'  build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/¶/\&para;/g'   build/html/*.html build/html/*/*.html build/html/*/*/*.html
+sed -i '' 's/…/\&hellip;/g' build/html/*.html build/html/*/*.html build/html/*/*/*.html
