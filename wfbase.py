@@ -167,9 +167,9 @@ def load_from_wannierberri(*args, **kwargs):
     a .wf database file from WfBase.
 
     See documentation of `Wannier Berri <https://wannier-berri.org>`_ for more
-    details on creation of object *System_w90*.
+    details on creation of object *System_R*.
 
-    :param system: This is *System_w90* object from Wannier Berri.
+    :param system: This is *System_R* object from Wannier Berri.
 
     :param global_fermi_level_ev: This is the Fermi level in eV.  You
       can get this number at the end of your self-consistent DFT calculation.
@@ -187,7 +187,7 @@ def load_from_wannierberri(*args, **kwargs):
         import wannierberri as wberri
 
         def main():
-            system = wberri.System_w90("run_dft_output/x", berry = True, spin = False)
+            system = wberri.System_R("run_dft_output/x", berry = True, spin = False)
             db = wf.load_from_wannierberri(system, global_fermi_level_ev = 18.3776)
 
         if __name__ == "__main__":
@@ -6397,8 +6397,8 @@ def _convert_left_to_right(left, given_left_return_right):
     return ret
 
 
-class _InterfaceToWberri(wberri.System_w90):
-    # This is a class that derives from Wannier Berri's System_w90 class.
+class _InterfaceToWberri(wberri.System_R):
+    # This is a class that derives from Wannier Berri's System_R class.
     # This class is only used as an interface to Wannier Berri, and this
     # class is therefore not supposed to be used directly by the user.
     def __init__(self, syst_raw = None):
